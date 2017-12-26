@@ -133,6 +133,20 @@ public class Sorts
 		}
 	}
 
+	public static int[] countingSort(int[] a, int k) {
+		int[] c = new int[k+1];
+		int[] b = new int[a.length+1];
+		for(int i=0;i<a.length;i++)
+			c[a[i]] = c[a[i]]+1;
+		for(int i=1;i<=k;i++)
+			c[i] = c[i]+c[i-1];
+		for(int i=a.length-1;i>=0;i--) {
+			b[c[a[i]]] = a[i];
+			c[a[i]]--;
+		}
+		return b;
+	}
+
     static void printArray(int arr[])
     {
         int n = arr.length;
@@ -143,9 +157,10 @@ public class Sorts
 
 	// public static void main(String[] args) {
 	// 	int[] arr = {22,43,3,7,88,67,35,99,76,82,90,156,211,4,71};
-	// 	printArray(arr);
-	// 	quickSort(arr, 0, arr.length -1);
-	// 	printArray(arr);
+	// 	int[] brr = {2, 5, 3, 0, 2, 3, 0, 3};
+	// 	printArray(brr);
+	// 	brr = countingSort(brr, 5);
+	// 	printArray(brr);
 	// }
 
 }

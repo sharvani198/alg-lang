@@ -1,5 +1,5 @@
 filename = 'ints';
-choice = 4;
+choice = 6;
 if(process.argv.length > 2) {
 	filename = process.argv[2];
 	choice = parseInt(process.argv[3]);
@@ -28,6 +28,15 @@ switch (choice) {
 		choiceStr = "quick sort"
 		quickSort = require('./quick_sort.js')
 		quickSort.quickSort(arr, 0, arr.length -1)
+		break	
+	case 5:	
+		choiceStr = "counting sort"
+		countingSort = require('./counting_sort.js')
+		arr=countingSort.countingSort(arr, arr.length)
+		break	
+	case 6:	
+		choiceStr = "default sort (insertion for small size then quicksort)"
+		arr = arr.sort((a,b)=> a-b) //since default is alphabetical sort, have to pass a comaprator func
 		break	
 	default:
 		choiceStr = "No such sort"

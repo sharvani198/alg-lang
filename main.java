@@ -55,6 +55,14 @@ class main
 				choiceStr = "quick sort";
 				Sorts.quickSort(arr, 0, arr.length - 1);
 				break;
+			case 5:
+				choiceStr = "counting sort";
+				arr = Sorts.countingSort(arr, arr.length);
+				break;
+			case 6:
+				choiceStr = "default sort (Dual Pivot QuickSort)";
+				Arrays.sort(arr);
+				break;
 			default:
 				choiceStr="no such sort";
 				break;

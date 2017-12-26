@@ -4,6 +4,7 @@ from insertion_sort import insertion_sort;
 from merge_sort import merge_sort;
 from heap import heap_sort;
 from quick_sort import quick_sort;
+from counting_sort import counting_sort;
 
 def readFromFile(fileName):
 	with open(fileName) as file:
@@ -24,7 +25,7 @@ def meaningfulArrayLength(length):
 
 if __name__== "__main__":
 	fileName  = 'ints';
-	choice = 4;
+	choice = 6;
 	if(len(argv) > 1):
 		fileName = argv[1];
 		choice  = int(argv[2]);
@@ -49,6 +50,12 @@ if __name__== "__main__":
 	elif choice == 4:
 		choiceStr = "quick sort"
 		quick_sort(integers, 0, len(integers)-1)
+	elif choice == 5:
+		choiceStr = "counting sort"
+		integers = counting_sort(integers, len(integers))
+	elif choice == 6:
+		choiceStr = "default sort(timsort - a hybrid of merge and insertion)"
+		integers = sorted(integers)
 	else:
 		choiceStr ="no such sort"
 

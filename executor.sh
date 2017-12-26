@@ -14,7 +14,9 @@ echo "ALgorithms list
     2: MERGE SORT
     3: HEAP SORT
     4: QUICK SORT
-    5: ALL
+    5: COUNTING SORT
+    6: DEFAULT SORT (as implemented by language)
+    7: ALL
 	"
 read -p "Enter your choice: " input
 
@@ -40,9 +42,9 @@ execute_choice()
 	echo "$((END-START)) sec taken by java."
 }
 
-if [ "$input" -eq "5" ]; then
-	echo "Executing all sorts. NB: This will take long for large input size, esp INSERTION SORT."
-	for i in 1 2 3 4
+if [ "$input" -eq "7" ]; then
+	echo "Executing all sorts. NB: This will take long for large input size."
+	for i in 2 3 4 5 6
 	do
 		execute_choice $i
 	done
